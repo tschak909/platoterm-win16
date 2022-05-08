@@ -1,0 +1,73 @@
+!define BLANK ""
+C:\Users\thomc\Workspace\platoterm-win16\io.obj : C:\Users\thomc\Workspace\p&
+latoterm-win16\io.c .AUTODEPEND
+ @C:
+ cd C:\Users\thomc\Workspace\platoterm-win16
+ *wcc io.c -i="C:\WATCOM/h;C:\WATCOM/h/win" -w4 -e25 -zq -od -of -bt=windows&
+ -fo=.obj -ml
+
+C:\Users\thomc\Workspace\platoterm-win16\keyboard.obj : C:\Users\thomc\Works&
+pace\platoterm-win16\keyboard.c .AUTODEPEND
+ @C:
+ cd C:\Users\thomc\Workspace\platoterm-win16
+ *wcc keyboard.c -i="C:\WATCOM/h;C:\WATCOM/h/win" -w4 -e25 -zq -od -of -bt=w&
+indows -fo=.obj -ml
+
+C:\Users\thomc\Workspace\platoterm-win16\main.obj : C:\Users\thomc\Workspace&
+\platoterm-win16\main.c .AUTODEPEND
+ @C:
+ cd C:\Users\thomc\Workspace\platoterm-win16
+ *wcc main.c -i="C:\WATCOM/h;C:\WATCOM/h/win" -w4 -e25 -zq -od -of -bt=windo&
+ws -fo=.obj -ml
+
+C:\Users\thomc\Workspace\platoterm-win16\protocol.obj : C:\Users\thomc\Works&
+pace\platoterm-win16\protocol.c .AUTODEPEND
+ @C:
+ cd C:\Users\thomc\Workspace\platoterm-win16
+ *wcc protocol.c -i="C:\WATCOM/h;C:\WATCOM/h/win" -w4 -e25 -zq -od -of -bt=w&
+indows -fo=.obj -ml
+
+C:\Users\thomc\Workspace\platoterm-win16\screen.obj : C:\Users\thomc\Workspa&
+ce\platoterm-win16\screen.c .AUTODEPEND
+ @C:
+ cd C:\Users\thomc\Workspace\platoterm-win16
+ *wcc screen.c -i="C:\WATCOM/h;C:\WATCOM/h/win" -w4 -e25 -zq -od -of -bt=win&
+dows -fo=.obj -ml
+
+C:\Users\thomc\Workspace\platoterm-win16\terminal.obj : C:\Users\thomc\Works&
+pace\platoterm-win16\terminal.c .AUTODEPEND
+ @C:
+ cd C:\Users\thomc\Workspace\platoterm-win16
+ *wcc terminal.c -i="C:\WATCOM/h;C:\WATCOM/h/win" -w4 -e25 -zq -od -of -bt=w&
+indows -fo=.obj -ml
+
+C:\Users\thomc\Workspace\platoterm-win16\touch.obj : C:\Users\thomc\Workspac&
+e\platoterm-win16\touch.c .AUTODEPEND
+ @C:
+ cd C:\Users\thomc\Workspace\platoterm-win16
+ *wcc touch.c -i="C:\WATCOM/h;C:\WATCOM/h/win" -w4 -e25 -zq -od -of -bt=wind&
+ows -fo=.obj -ml
+
+C:\Users\thomc\Workspace\platoterm-win16\plato.exe : C:\Users\thomc\Workspac&
+e\platoterm-win16\io.obj C:\Users\thomc\Workspace\platoterm-win16\keyboard.o&
+bj C:\Users\thomc\Workspace\platoterm-win16\main.obj C:\Users\thomc\Workspac&
+e\platoterm-win16\protocol.obj C:\Users\thomc\Workspace\platoterm-win16\scre&
+en.obj C:\Users\thomc\Workspace\platoterm-win16\terminal.obj C:\Users\thomc\&
+Workspace\platoterm-win16\touch.obj C:\Users\thomc\Workspace\platoterm-win16&
+\connect.DLG .AUTODEPEND
+ @C:
+ cd C:\Users\thomc\Workspace\platoterm-win16
+ @%write plato.lk1 FIL io.obj,keyboard.obj,main.obj,protocol.obj,screen.obj,&
+terminal.obj,touch.obj
+ @%append plato.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b plato.imp 
+ @%append plato.lk1 LIBR plato.imp
+!endif
+!ifneq BLANK ""
+ @%append plato.lk1 op resource=
+!endif
+ *wlink name plato sys windows op m op maxe=25 op q op symf @plato.lk1
+!ifneq BLANK ""
+!endif
+

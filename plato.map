@@ -1,0 +1,352 @@
+Open Watcom Linker Version 2.0 beta Jun 15 2021 00:47:58 (64-bit)
+Copyright (c) 2002-2021 The Open Watcom Contributors. All Rights Reserved.
+Portions Copyright (c) 1985-2002 Sybase, Inc. All Rights Reserved.
+Created on:       21/07/03 12:53:50
+Executable Image: plato.exe
+creating a Windows 16-bit executable
+
+
+                        +------------+
+                        |   Groups   |
+                        +------------+
+
+Group                           Address              Size
+=====                           =======              ====
+
+DGROUP                          0002:0000            0000c0c0
+
+
+
+                        +--------------+
+                        |   Segments   |
+                        +--------------+
+
+Segment                Class          Group          Address         Size
+=======                =====          =====          =======         ====
+
+io_TEXT                CODE           AUTO           0001:0000       00000225
+keyboard_TEXT          CODE           AUTO           0001:0225       00000885
+main_TEXT              CODE           AUTO           0001:0aaa       00000399
+protocol_TEXT          CODE           AUTO           0001:0e43       000012be
+screen_TEXT            CODE           AUTO           0001:2101       00000f4b
+terminal_TEXT          CODE           AUTO           0001:304c       000003f7
+touch_TEXT             CODE           AUTO           0001:3443       00000104
+_TEXT                  CODE           AUTO           0001:3548       00000387
+FAR_DATA               FAR_DATA       AUTO           0002:0000       00000000
+_NULL                  BEGDATA        DGROUP         0002:0000       00000010
+AFX_NULL               BEGDATA        DGROUP         0002:0010       00000000
+CONST                  DATA           DGROUP         0002:0010       0000002a
+CONST2                 DATA           DGROUP         0002:003a       00000591
+_DATA                  DATA           DGROUP         0002:05cc       00001022
+XIB                    DATA           DGROUP         0002:15ee       00000000
+XI                     DATA           DGROUP         0002:15ee       00000006
+XIE                    DATA           DGROUP         0002:15f4       00000000
+YIB                    DATA           DGROUP         0002:15f4       00000000
+YI                     DATA           DGROUP         0002:15f4       00000000
+YIE                    DATA           DGROUP         0002:15f4       00000000
+STRINGS                DATA           DGROUP         0002:15f4       00000000
+DATA                   DATA           DGROUP         0002:15f4       00000000
+BCSD                   DATA           DGROUP         0002:15f4       00000000
+_BSS                   BSS            DGROUP         0002:15f4       00008ac2
+STACK                  STACK          DGROUP         0002:a0c0       00002000
+
+
+                        +----------------+
+                        |   Memory Map   |
+                        +----------------+
+
+* = unreferenced symbol
++ = symbol only referenced locally
+
+Address        Symbol
+=======        ======
+
+Module: io.obj(C:\Users\thomc\Workspace\platoterm-win16\io.c)
+0001:0000      io_init_
+0001:0107      io_send_byte_
+0001:0143      io_main_
+0001:01be      io_done_
+0001:01ec      io_replay_clear_
+0002:003a+     _splash
+0002:15f4+     _serveraddr
+0002:1604+     _wsaData
+0002:1792+     _sockfd
+0002:1794+     _wVersionRequested
+Module: keyboard.obj(C:\Users\thomc\Workspace\platoterm-win16\keyboard.c)
+0001:0225+     keyboard_out_
+0001:032d      keyboard_main_
+0001:0a0a      keyboard_main_up_
+0001:0a5b*     keyboard_clear_
+0001:0a7b*     keyboard_out_tty_
+0002:05cc+     _control_pressed
+0002:05cd+     _shift_pressed
+0002:1796*     _debugMsg
+Module: main.obj(C:\Users\thomc\Workspace\platoterm-win16\main.c)
+0001:0aaa      WINMAIN
+0001:0c90+     WNDPROC
+0002:05ce+     _already_started
+0002:05d0*     _doing_io
+0002:1816      _buffer
+0002:5816      _replay_buffer
+0002:9816      _ySize
+0002:9818      _buflen
+0002:981a      _replaylen
+Module: protocol.obj(C:\Users\thomc\Workspace\platoterm-win16\protocol.c)
+0002:988d      _FastText
+0001:0e43*     InitPAD_
+0001:0e67+     InitTTY_
+0001:0ea6*     InitPLATO_
+0001:0ed6+     InitPLATOx_
+0001:0f68      Key_
+0001:1016      Touch_
+0001:10c2+     Ext_
+0001:10f3+     Echo_
+0001:1121+     SetCommand_
+0001:1159+     SetMode_
+0001:119f+     FixXY_
+0001:1256+     Superx_
+0001:127f+     Subx_
+0001:12a8+     Marginx_
+0001:12e2+     BSx_
+0001:130b+     HTx_
+0001:1334+     LFx_
+0001:135d+     VTx_
+0001:1386+     FFx_
+0001:13b6+     CRx_
+0001:13f4+     LoadCoordx_
+0001:1441+     Blockx_
+0001:14ba+     Pointx_
+0001:14f5+     Linex_
+0001:156a+     Alphax_
+0001:15ea+     LoadEchox_
+0001:171c+     LoadAddrx_
+0001:1748+     LoadCharx_
+0001:17ba+     LoadMemx_
+0001:17eb+     SSFx_
+0001:1896+     Externalx_
+0001:18ef+     GoMode_
+0001:19e8+     GoWord_
+0001:1a67+     GoCoord_
+0001:1b0b+     GoColor_
+0001:1baf+     GoPaint_
+0001:1bf1+     DataChar_
+0001:1c4f      ShowPLATO_
+0001:20ac+     SetFast_
+0002:06dc+     _PLATOSize
+0002:9896      _Reverse
+0002:9897      _Rotate
+0002:9898      _CurMode
+0002:9899      _TTY
+0002:989a+     _FlowControl
+0002:989b      _CurMem
+0002:989c      _ModeBold
+Module: screen.obj(C:\Users\thomc\Workspace\platoterm-win16\screen.c)
+0001:2101      screen_init_
+0001:216a      screen_set_hdc_
+0001:2195*     screen_main_
+0001:21b5      screen_wait_
+0001:21d5      screen_beep_
+0001:21fd      screen_clear_
+0001:2280      screen_block_draw_
+0001:24cc      screen_dot_draw_
+0001:25b9      screen_line_draw_
+0001:26d6      screen_char_draw_
+0001:2d83      screen_tty_char_
+0001:2e64      screen_foreground_
+0001:2ef3      screen_background_
+0001:2f82      screen_paint_
+0001:302c*     screen_done_
+0002:06e0+     _font
+0002:10e0      _CharHigh
+0002:10e1      _CharWide
+0002:10e2      _scaley
+0002:989e      _fontm23
+0002:a09e+     _background
+0002:a0a2      _TTYLoc
+0002:a0a6+     _foreground
+0002:a0aa+     _hwnd
+0002:a0ac+     _hDC
+0002:a0ae+     _foregroundColor
+0002:a0b1+     _backgroundColor
+Module: terminal.obj(C:\Users\thomc\Workspace\platoterm-win16\terminal.c)
+0001:304c      terminal_init_
+0001:3070*     terminal_initial_position_
+0001:309c      terminal_set_tty_
+0001:30f0      terminal_set_plato_
+0001:311a      terminal_get_features_
+0001:3141      terminal_get_type_
+0001:3168      terminal_get_subtype_
+0001:318f      terminal_get_load_file_
+0001:31b6      terminal_get_configuration_
+0001:31dd      terminal_get_char_address_
+0001:3205      terminal_mem_read_
+0001:3231      terminal_mem_load_
+0001:3257      terminal_mode_5_
+0001:327c      terminal_mode_6_
+0001:32a1      terminal_mode_7_
+0001:32c6      terminal_ext_allow_
+0001:32eb      terminal_set_ext_in_
+0001:3310      terminal_set_ext_out_
+0001:3335      terminal_ext_in_
+0001:335c      terminal_ext_out_
+0001:3381      terminal_char_load_
+Module: touch.obj(C:\Users\thomc\Workspace\platoterm-win16\touch.c)
+0001:3443*     touch_init_
+0001:3463      touch_main_
+0001:34c2      touch_allow_
+0001:34e7*     handle_mouse_
+0001:3507*     touch_hide_
+0001:3527*     touch_done_
+Module: C:\WATCOM\lib286\win\clibl.lib(stk086.asm)
+0001:354d      __STK
+0001:3564*     __STKOVERFLOW_
+Module: C:\WATCOM\lib286\win\clibl.lib(memcpy.c)
+0001:3581      memcpy_
+Module: C:\WATCOM\lib286\win\clibl.lib(memset.c)
+0001:35a8      memset_
+Module: C:\WATCOM\lib286\win\clibl.lib(cmodel.asm)
+0001:35c6      _big_code_
+0001:35c6*     CodeModelMismatch
+Module: C:\WATCOM\lib286\win\clibl.lib(wstart)
+0000:0006*     pLocalHeap
+0000:0008*     pAtomTable
+0000:000a*     pStackTop
+0000:000c*     pStackMin
+0000:000e*     pStackBot
+0002:0000*     __nullarea
+0002:14ee*     __curbrk
+0002:14f0*     __psp
+0002:14f2*     __osmajor
+0002:14f3*     __osminor
+0002:14f4*     __osmode
+0002:000a      __STACKLOW
+0002:000c*     __STACKTOP
+0002:14f6*     __cbyte
+0002:14f8*     __child
+0002:14fa*     __no87
+0002:14f5*     __HShift
+0002:14fb*     __get_ovl_stack
+0002:14ff*     __restore_ovl_stack
+0002:1503*     ___FPE_handler
+0002:1507*     __LpCmdLine
+0002:150b*     __LpPgmName
+0001:35c6      _wstart_
+0001:35c6*     _cstart_
+0001:35d1      __exit_
+0001:36e7      __GETDS
+Module: C:\WATCOM\lib286\win\clibl.lib(abs.c)
+0001:36e9      abs_
+Module: C:\WATCOM\lib286\win\clibl.lib(xmsg.c)
+0001:36f1*     __exit_with_msg_
+0001:3748      __fatal_runtime_error_
+Module: C:\WATCOM\lib286\win\clibl.lib(dosseg)
+0001:3762      __DOSseg__
+Module: C:\WATCOM\lib286\win\clibl.lib(exit.c)
+0001:3763+     __null_int23_exit_
+0001:3764      exit_
+0001:3799      _exit_
+0002:15a0+     ___int23_exit
+0002:15a4+     ___FPE_handler_exit
+Module: C:\WATCOM\lib286\win\clibl.lib(initrtns.c)
+0001:37db*     __FInitRtns
+0001:37e6      __InitRtns
+0001:3840*     __FFiniRtns
+0001:384b      __FiniRtns
+Module: C:\WATCOM\lib286\win\clibl.lib(enterdb.c)
+0001:38ab      __EnterWVIDEO_
+0002:15a8+     ___WD_Present
+Module: C:\WATCOM\lib286\win\clibl.lib(winrtns.c)
+0002:15aa*     __WindowsIsWindowedHandle
+0002:15ae*     __WindowsRemoveWindowedHandle
+0002:15b2*     __WindowsNewWindow
+0002:15b6*     __WindowsCloseWindow
+0002:15ba*     __WindowsSetAbout
+0002:15be*     __WindowsSetAppTitle
+0002:15c2*     __WindowsSetConTitle
+0002:15c6*     __WindowsDestroyOnClose
+0002:15ca*     __WindowsYieldControl
+0002:15ce*     __WindowsShutDown
+0002:15d2*     __WindowsStdin
+0002:15d6*     __WindowsStdout
+0002:15da*     __WindowsKbhit
+0002:15de*     __WindowsGetch
+0002:15e2*     __WindowsGetche
+0002:15e6*     __WindowsPutch
+0002:15ea      __WindowsExitRtn
+Module: C:\WATCOM\lib286\win\clibl.lib(sgdef086)
+0002:15ee      __Start_XI
+0002:15f4      __End_XI
+0002:15f4      __Start_YI
+0002:15f4      __End_YI
+
+
+                        +----------------------+
+                        |   Imported Symbols   |
+                        +----------------------+
+
+Symbol                              Module
+======                              ======
+
+WSASTARTUP                          WINSOCK
+SOCKET                              WINSOCK
+INET_ADDR                           WINSOCK
+HTONS                               WINSOCK
+IOCTLSOCKET                         WINSOCK
+CONNECT                             WINSOCK
+SEND                                WINSOCK
+RECV                                WINSOCK
+CLOSESOCKET                         WINSOCK
+WSACLEANUP                          WINSOCK
+LOADICON                            USER
+LOADCURSOR                          USER
+GETSTOCKOBJECT                      GDI
+REGISTERCLASS                       USER
+GETSYSTEMMETRICS                    USER
+CREATEWINDOW                        USER
+SHOWWINDOW                          USER
+UPDATEWINDOW                        USER
+WSAASYNCSELECT                      WINSOCK
+PEEKMESSAGE                         USER
+TRANSLATEMESSAGE                    USER
+DISPATCHMESSAGE                     USER
+INVALIDATERECT                      USER
+BEGINPAINT                          USER
+ENDPAINT                            USER
+POSTQUITMESSAGE                     USER
+DEFWINDOWPROC                       USER
+MESSAGEBEEP                         USER
+CREATESOLIDBRUSH                    GDI
+SELECTOBJECT                        GDI
+FILLRECT                            USER
+DELETEOBJECT                        GDI
+SETPIXEL                            GDI
+CREATEPEN                           GDI
+MOVETOEX                            GDI
+LINETO                              GDI
+GETNEARESTCOLOR                     GDI
+FLOODFILL                           GDI
+INITTASK                            KERNEL
+GETMODULEFILENAME                   KERNEL
+INITAPP                             USER
+WAITEVENT                           KERNEL
+__AHSHIFT                           KERNEL
+MESSAGEBOX                          USER
+
+
+                        +--------------------+
+                        |   Libraries Used   |
+                        +--------------------+
+
+C:\WATCOM\lib286\win\windows.lib
+C:\WATCOM\lib286\win\winsock.lib
+C:\WATCOM\lib286\win\clibl.lib
+
+
+                        +-----------------------+
+                        |   Linker Statistics   |
+                        +-----------------------+
+
+Stack size:  2000 (8192.)
+Memory size:  f98f (63887.)
+Entry point address: 0001:35c6
+Link time: 00:00.26

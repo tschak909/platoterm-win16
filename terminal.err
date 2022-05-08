@@ -1,0 +1,10 @@
+terminal.c(152): Warning! W303: Parameter 'addr' has been defined, but not referenced
+terminal.c(161): Warning! W303: Parameter 'addr' has been defined, but not referenced
+terminal.c(161): Warning! W303: Parameter 'value' has been defined, but not referenced
+terminal.c(169): Warning! W303: Parameter 'value' has been defined, but not referenced
+terminal.c(173): Warning! W303: Parameter 'value' has been defined, but not referenced
+terminal.c(177): Warning! W303: Parameter 'value' has been defined, but not referenced
+terminal.c(184): Warning! W303: Parameter 'allow' has been defined, but not referenced
+terminal.c(193): Warning! W303: Parameter 'device' has been defined, but not referenced
+terminal.c(201): Warning! W303: Parameter 'device' has been defined, but not referenced
+terminal.c(218): Warning! W303: Parameter 'value' has been defined, but not referenced

@@ -1,0 +1,1 @@
+main.c(24): Warning! W303: Parameter 'lpszCmdLine' has been defined, but not referenced
